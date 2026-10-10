@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 950" fill="none">
+  <defs><pattern id="lines" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)"><path d="M0 0v12" stroke="#424d2c" stroke-width="1"/></pattern><linearGradient id="paper" x2="600" y2="950" gradientUnits="userSpaceOnUse"><stop stop-color="#d8dec8"/><stop offset="1" stop-color="#abb793"/></linearGradient><clipPath id="crop"><path d="M0 0h600v950H0z"/></clipPath></defs>
+  <path fill="url(#paper)" d="M0 0h600v950H0z"/>
+  <g clip-path="url(#crop)"><circle cx="305" cy="367" r="240" fill="#edefdf"/><circle cx="305" cy="367" r="239" stroke="#65714f" stroke-width="2"/>
+  <path d="M140 898V465c0-113 73-185 165-185s165 72 165 185v433" fill="url(#lines)"/><path d="M140 898V465c0-113 73-185 165-185s165 72 165 185v433" stroke="#465031" stroke-width="2"/>
+  <path d="M203 902V462c0-72 41-119 102-119s102 47 102 119v440" fill="#ccd4b9"/><path d="M244 913V461c0-43 23-71 61-71s61 28 61 71v452" fill="#5b6c43"/>
+  <path d="M30 667l540-172M30 695l540-172M30 723l540-172M30 751l540-172M30 779l540-172" stroke="#e9ecdb" stroke-width="1"/>
+  <path d="M44 51h45m-23-22v45M512 51h45m-23-22v45M44 895h45m-23-22v45M512 895h45m-23-22v45" stroke="#3e4b2f"/>
+  <path d="M65 99v727M535 99v727" stroke="#4c5e37" stroke-opacity=".35" stroke-dasharray="2 7"/>
+  <circle cx="305" cy="142" r="5" fill="#4c5f26"/></g>
+</svg>
