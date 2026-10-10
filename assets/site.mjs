@@ -1,4 +1,6 @@
-import { resolveTheme, sectionOrder, themeIds } from './theme.mjs?v=1c4cfcd5e39a9f0f';
+import { resolveTheme, sectionOrder, themeIds, allThemeIds } from './theme.mjs?v=c263b7c3bc10b25e';
+import { holidayForDate } from './holiday-calendar.mjs?v=c263b7c3bc10b25e';
+import { holidayNotices } from '../themes/holidays.mjs?v=c263b7c3bc10b25e';
 const preferenceKey = 'marcomc-theme';
 const assetQuery = new URL(import.meta.url).search;
 const storage = {
@@ -14,11 +16,17 @@ async function init() {
   const sections = [...main.querySelectorAll(':scope > [data-section]')];
   const existing = sections.map(s => s.dataset.section);
   const selector = document.getElementById('theme-select');
+  const holidayNote = document.createElement('small');
+  holidayNote.id = 'holiday-note';
+  holidayNote.setAttribute('role', 'status');
+  holidayNote.hidden = true;
+  document.querySelector('.theme-control').append(holidayNote);
   let changeId = 0;
   async function apply(choice) {
     const currentId = ++changeId;
-    const theme = resolveTheme({ requested:choice, saved:storage.get(), month:new Date().getMonth()+1, manifest });
-    if (!themeIds.includes(theme)) return;
+    const date = new Date();
+    const theme = resolveTheme({ requested:choice, saved:storage.get(), date, manifest });
+    if (!allThemeIds.includes(theme)) return;
     const current = document.getElementById('theme-stylesheet');
     const stylesheetURL = `/themes/${theme}.css${assetQuery}`;
     if (current.href !== new URL(stylesheetURL, location.origin).href) {
@@ -33,15 +41,24 @@ async function init() {
     }
     document.body.dataset.theme = theme;
     for (const id of sectionOrder(manifest, theme, document.body.dataset.page, existing)) main.append(sections.find(s => s.dataset.section === id));
+    const holiday = holidayForDate(date);
+    const lang = document.documentElement.lang;
+    holidayNote.textContent = holiday ? (holidayNotices[lang] ?? holidayNotices.en)
+      .replace('{holiday}', holiday.names[lang] ?? holiday.names.en) : '';
+    holidayNote.hidden = !holiday;
   }
   const requested = new URLSearchParams(location.search).get('theme');
   const saved = storage.get();
-  const initial = themeIds.includes(requested) || requested === 'auto' ? requested
+  const initial = allThemeIds.includes(requested) || requested === 'auto' ? requested
     : themeIds.includes(saved) || saved === 'auto' ? saved : manifest.default;
-  selector.value = initial;
+  let choice = initial;
+  let calendarDay = new Date().toDateString();
+  selector.value = themeIds.includes(initial) || initial === 'auto' ? initial
+    : themeIds.includes(saved) || saved === 'auto' ? saved : manifest.default;
   await apply(initial);
   document.querySelector('.theme-control').hidden = false;
   selector.addEventListener('change', async () => {
+    choice = selector.value;
     storage.set(selector.value);
     const cleanURL = new URL(location.href);
     cleanURL.searchParams.delete('theme');
@@ -52,11 +69,27 @@ async function init() {
     }
     await apply(selector.value);
   });
-  if (themeIds.includes(requested) || requested === 'auto') {
+  if (allThemeIds.includes(requested) || requested === 'auto') {
     for (const link of document.querySelectorAll('.primary-nav a, .language-switch a')) {
       const target = new URL(link.href);
       if (target.origin === location.origin) { target.searchParams.set('theme', requested); link.href = target; }
     }
   }
+  // Re-evaluate civil dates after midnight, suspension or a time-zone change.
+  let midnightTimer;
+  function refreshCalendar() {
+    const now = new Date();
+    const nextDay = new Date(now);
+    nextDay.setHours(24, 0, 0, 0);
+    clearTimeout(midnightTimer);
+    midnightTimer = setTimeout(refreshCalendar, nextDay.getTime() - now.getTime() + 50);
+    if (now.toDateString() !== calendarDay) {
+      calendarDay = now.toDateString();
+      apply(choice);
+    }
+  }
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshCalendar(); });
+  window.addEventListener('pageshow', refreshCalendar);
+  refreshCalendar();
 }
 init().catch(() => { /* Static content and the default stylesheet remain usable offline. */ });

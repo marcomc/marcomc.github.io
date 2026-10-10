@@ -1,0 +1,90 @@
+/* carnival: original festive direction for Marco Massari Calderone. */
+:root { color-scheme: light; --bg: #f8f2f8; --surface: #eee3f0; --text: #362445; --muted: #67506f; --accent: #72417c; --line: #bba5c0; --button-text: #fff9fc; --font-display: "Avenir Next", Avenir, sans-serif; --holiday-art: url("./artwork/carnival.svg?v=c263b7c3bc10b25e"); }
+
+/* Self-contained overlay for the production base; section order stays in the DOM. */
+body { background: var(--bg); }
+.page-shell > section, .hero-copy, .brand > span, .section-heading > *, .stat { min-width: 0; }
+.site-header { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 1.5rem; }
+.brand { min-width: 0; }
+.brand-mark { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent); border-color: var(--accent); }
+.hero { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 4%; padding-block: 4.5rem; }
+.hero h1 { max-width: 13ch; font-size: clamp(2.8rem, 5vw, 5.2rem); overflow-wrap: anywhere; }
+.hero-visual { isolation: isolate; padding: 2rem; background: var(--holiday-art) center top / contain no-repeat; }
+.portrait { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 42%; box-shadow: none; }
+.portrait-orbit { display: none; }
+.visual-coordinate { right: 0; }
+.visual-caption { color: var(--text); line-height: 1.6; }
+.button { background: var(--accent); color: var(--button-text); border: 1px solid var(--accent); }
+.service-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.project-grid, .about-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.stats-grid .stat { flex-direction: column; align-items: flex-start; }
+.stats-grid .stat strong { font-size: clamp(2rem, 3.8vw, 3.5rem); }
+.stat span { max-width: none; overflow-wrap: anywhere; }
+.service-card, .project-card { border-color: var(--line); background: var(--surface); }
+.service-card h3, .project-card h3, .interest h3, .step h3 { overflow-wrap: anywhere; }
+.contact-panel { background: var(--surface); }
+.contact-email { display: flex; width: fit-content; max-width: 100%; gap: .65rem; overflow-wrap: anywhere; }
+.contact-email span { flex-shrink: 0; }
+.theme-control select { border-color: var(--accent); }
+
+.hero h1 { font-weight: 550; letter-spacing: -.06em; }
+.hero-visual { padding: 4.5rem 1.4rem 1.4rem 2rem; }
+.portrait { border-radius: 5px 70px 5px 70px; border: 7px solid #1d6965; aspect-ratio: .95; }
+.button { border-radius: 2px 18px 2px 18px; }
+.service-card { border-radius: 0; border-width: 1px 1px 1px 5px; border-left-color: #1d6965; }
+.service-card:nth-child(3n + 2) { border-left-color: #ac514a; }
+.service-card:nth-child(3n) { border-left-color: #72417c; }
+.project-card { background: transparent; border-radius: 0 28px 0 0; }
+.card-number { font-family: ui-monospace, monospace; }
+.contact-panel { border-radius: 3px 50px 3px 3px; border-left: 6px solid #1d6965; }
+.proof-strip { border-top: 3px solid var(--accent); }
+
+@media (max-width: 1000px) {
+  .site-header { grid-template-columns: minmax(0, 1fr) auto; }
+  .primary-nav { grid-column: 1 / -1; grid-row: 2; width: 100%; justify-content: space-between; margin-left: 0; }
+  .language-switch { grid-column: 2; grid-row: 1; }
+  .site-header { padding-block: 1.5rem; }
+  .hero h1 { font-size: clamp(2.6rem, 5.6vw, 4rem); }
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr); padding-block: 3rem; gap: 2.5rem; }
+  .hero h1 { font-size: clamp(2.4rem, 10vw, 3.8rem); max-width: 16ch; }
+  .hero-visual { width: 100%; max-width: 420px; margin-inline: auto; padding: 1.4rem; }
+  .portrait { max-height: none; }
+  .service-grid, .project-grid, .about-grid { grid-template-columns: minmax(0, 1fr); }
+  .section-heading { display: block; }
+  .section-heading p { margin-top: 1.2rem; }
+  .section { padding-block: 3rem; }
+  .contact-panel { padding: 2rem 1.5rem; }
+  .contact-panel h2 { font-size: 2rem; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 380px) {
+  .site-header { gap: .6rem; }
+  .brand { font-size: 1rem; gap: .4rem; }
+  .brand small { font-size: .53rem; }
+  .brand-mark { width: 32px; height: 32px; }
+  .language-switch a { min-width: 29px; }
+  .primary-nav { gap: .5rem; }
+  .primary-nav a { font-size: .8rem; }
+  .primary-nav .nav-contact { padding: .6rem .65rem; }
+  .hero h1 { font-size: 2.45rem; }
+  .hero-actions { gap: 1rem; }
+  .steps { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button, .service-card { transition: none; }
+  .button:hover, .service-card:hover { transform: none; }
+}
+@media (forced-colors: active) {
+  .hero-visual { background: none; }
+  .portrait { border: 1px solid CanvasText; }
+  .service-card, .project-card, .contact-panel, .button { border: 1px solid CanvasText; }
+}
+@media print {
+  :root { --bg: white; --surface: white; --text: black; --muted: black; --accent: black; --line: #777; }
+  .hero { display: block; min-height: 0; padding: 1rem 0; }
+  .hero-visual { display: none; }
+}

@@ -1,0 +1,38 @@
+# MarcoMC — Marco Massari Calderone
+
+> Software & infrastructure consultant. Application development, web development, DevOps, API integrations and automation.
+
+Consulting enquiries and project quotes: [marco@marcomc.com](mailto:marco@marcomc.com).
+
+Alongside consulting, I develop personal software projects. These are areas of ongoing development, not a catalogue of commercially available products.
+
+The linked Markdown pages are generated from the same content as the public website. GitHub statistics include their snapshot date and counting method. English is the primary language; French, Italian and Portuguese versions are also available.
+
+## English
+
+- [Services](https://marcomc.com/index.md): Direct collaboration, clear decisions and hands-on delivery. Bring me a new idea, an existing platform or a workflow that needs to work better.
+- [About me](https://marcomc.com/bio/index.md): The person behind the code.
+- [Privacy & site information](https://marcomc.com/privacy/index.md)
+
+## Français
+
+- [Services](https://marcomc.com/fr/index.md): Une collaboration directe, des décisions claires et un travail concret. Confiez-moi une idée, une plateforme existante ou un processus à améliorer.
+- [À propos](https://marcomc.com/fr/bio/index.md): La personne derrière le code.
+- [Confidentialité & informations](https://marcomc.com/fr/privacy/index.md)
+
+## Italiano
+
+- [Servizi](https://marcomc.com/it/index.md): Collaborazione diretta, scelte chiare e lavoro concreto. Portami una nuova idea, una piattaforma esistente o un processo da migliorare.
+- [Chi sono](https://marcomc.com/it/bio/index.md): La persona dietro il codice.
+- [Privacy & informazioni sul sito](https://marcomc.com/it/privacy/index.md)
+
+## Português
+
+- [Serviços](https://marcomc.com/pt/index.md): Colaboração direta, decisões claras e trabalho concreto. Traga uma ideia nova, uma plataforma existente ou um processo que precisa de melhorar.
+- [Sobre mim](https://marcomc.com/pt/bio/index.md): A pessoa por detrás do código.
+- [Privacidade & informações do site](https://marcomc.com/pt/privacy/index.md)
+
+## Optional
+
+- [GitHub profile](https://github.com/marcomc): Public repositories and contributions.
+- [Sitemap](https://marcomc.com/sitemap.xml): Canonical HTML pages in all four languages.
