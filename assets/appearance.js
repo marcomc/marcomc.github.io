@@ -7,7 +7,10 @@ const requested = new URLSearchParams(location.search).get('theme');
 const theme = (function resolveTheme({ requested, saved, month, manifest }) {
   if (themeIds.includes(requested)) return requested;
   if (requested !== 'auto' && themeIds.includes(saved)) return saved;
-  return manifest.themes.find(t => t.months.includes(month))?.id ?? manifest.default;
+  if (requested === 'auto' || saved === 'auto') {
+    return manifest.themes.find(t => t.months.includes(month))?.id ?? manifest.default;
+  }
+  return manifest.default;
 })({requested, saved, month:new Date().getMonth()+1, manifest});
 if (themeIds.includes(theme)) document.getElementById('theme-stylesheet').href = '/themes/' + theme + '.css';
 })();

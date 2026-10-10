@@ -2,7 +2,7 @@ import { resolveTheme, sectionOrder, themeIds } from './theme.mjs';
 const preferenceKey = 'marcomc-theme';
 const storage = {
   get() { try { return localStorage.getItem(preferenceKey); } catch { return null; } },
-  set(value) { try { if (value === 'auto') localStorage.removeItem(preferenceKey); else localStorage.setItem(preferenceKey, value); } catch { /* Preferences are optional when browser storage is unavailable. */ } }
+  set(value) { try { localStorage.setItem(preferenceKey, value); } catch { /* Preferences are optional when browser storage is unavailable. */ } }
 };
 async function init() {
   const response = await fetch('/themes/manifest.json');
@@ -33,8 +33,10 @@ async function init() {
     for (const id of sectionOrder(manifest, theme, document.body.dataset.page, existing)) main.append(sections.find(s => s.dataset.section === id));
   }
   const requested = new URLSearchParams(location.search).get('theme');
-  const initial = themeIds.includes(requested) || requested === 'auto' ? requested : storage.get() || 'auto';
-  selector.value = themeIds.includes(initial) ? initial : 'auto';
+  const saved = storage.get();
+  const initial = themeIds.includes(requested) || requested === 'auto' ? requested
+    : themeIds.includes(saved) || saved === 'auto' ? saved : manifest.default;
+  selector.value = initial;
   await apply(initial);
   document.querySelector('.theme-control').hidden = false;
   selector.addEventListener('change', async () => {
