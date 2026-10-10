@@ -1,4 +1,4 @@
-// Festive themes are temporary overrides, never persisted appearance preferences.
+// Festive themes can be selected manually; calendar overrides never change preferences.
 export const holidayThemes = [
   {
     id: 'easter', label: 'Easter · Petal',

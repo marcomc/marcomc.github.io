@@ -1,5 +1,5 @@
 /* halloween: original festive direction for Marco Massari Calderone. */
-:root { color-scheme: dark; --bg: #231c2c; --surface: #32283d; --text: #fff1e5; --muted: #d4c1d5; --accent: #ffbb83; --line: #7b637f; --button-text: #2d2035; --font-display: "Avenir Next", Avenir, sans-serif; --holiday-art: url("./artwork/halloween.svg?v=c263b7c3bc10b25e"); }
+:root { color-scheme: dark; --bg: #231c2c; --surface: #32283d; --text: #fff1e5; --muted: #d4c1d5; --accent: #ffbb83; --line: #7b637f; --button-text: #2d2035; --font-display: "Avenir Next", Avenir, sans-serif; --holiday-art: url("./artwork/halloween.svg?v=bf5dc55ff94c33f5"); }
 
 /* Self-contained overlay for the production base; section order stays in the DOM. */
 body { background: var(--bg); }

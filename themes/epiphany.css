@@ -1,5 +1,5 @@
 /* epiphany: original festive direction for Marco Massari Calderone. */
-:root { color-scheme: dark; --bg: #101b3b; --surface: #1b2b4c; --text: #f4f3fa; --muted: #c2c9df; --accent: #addbe8; --line: #596b8f; --button-text: #152541; --font-display: Georgia, "Times New Roman", serif; --holiday-art: url("./artwork/epiphany.svg?v=c263b7c3bc10b25e"); }
+:root { color-scheme: dark; --bg: #101b3b; --surface: #1b2b4c; --text: #f4f3fa; --muted: #c2c9df; --accent: #addbe8; --line: #596b8f; --button-text: #152541; --font-display: Georgia, "Times New Roman", serif; --holiday-art: url("./artwork/epiphany.svg?v=bf5dc55ff94c33f5"); }
 
 /* Self-contained overlay for the production base; section order stays in the DOM. */
 body { background: var(--bg); }

@@ -1,5 +1,5 @@
-import { holidayForDate } from './holiday-calendar.mjs?v=c263b7c3bc10b25e';
-import { holidayThemeIds } from '../themes/holidays.mjs?v=c263b7c3bc10b25e';
+import { holidayForDate } from './holiday-calendar.mjs?v=bf5dc55ff94c33f5';
+import { holidayThemeIds } from '../themes/holidays.mjs?v=bf5dc55ff94c33f5';
 
 export const themeIds = ['tide', 'fieldnotes', 'circuit', 'atelier'];
 export const allThemeIds = [...themeIds, ...holidayThemeIds];
@@ -7,7 +7,7 @@ export function resolveTheme({ requested, saved, date = new Date(), month = date
   const holiday = holidayForDate(date);
   if (holiday) return holiday.id;
   if (allThemeIds.includes(requested)) return requested;
-  if (requested !== 'auto' && themeIds.includes(saved)) return saved;
+  if (requested !== 'auto' && allThemeIds.includes(saved)) return saved;
   if (requested === 'auto' || saved === 'auto') {
     return manifest.themes.find(t => t.months.includes(month))?.id ?? manifest.default;
   }

@@ -1,5 +1,5 @@
 /* carnival: original festive direction for Marco Massari Calderone. */
-:root { color-scheme: light; --bg: #f8f2f8; --surface: #eee3f0; --text: #362445; --muted: #67506f; --accent: #72417c; --line: #bba5c0; --button-text: #fff9fc; --font-display: "Avenir Next", Avenir, sans-serif; --holiday-art: url("./artwork/carnival.svg?v=c263b7c3bc10b25e"); }
+:root { color-scheme: light; --bg: #f8f2f8; --surface: #eee3f0; --text: #362445; --muted: #67506f; --accent: #72417c; --line: #bba5c0; --button-text: #fff9fc; --font-display: "Avenir Next", Avenir, sans-serif; --holiday-art: url("./artwork/carnival.svg?v=bf5dc55ff94c33f5"); }
 
 /* Self-contained overlay for the production base; section order stays in the DOM. */
 body { background: var(--bg); }

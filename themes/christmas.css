@@ -1,5 +1,5 @@
 /* christmas: original festive direction for Marco Massari Calderone. */
-:root { color-scheme: dark; --bg: #112c27; --surface: #1b3c32; --text: #faf3e5; --muted: #c3cdbf; --accent: #efd298; --line: #567464; --button-text: #173b2e; --font-display: Georgia, "Times New Roman", serif; --holiday-art: url("./artwork/christmas.svg?v=c263b7c3bc10b25e"); }
+:root { color-scheme: dark; --bg: #112c27; --surface: #1b3c32; --text: #faf3e5; --muted: #c3cdbf; --accent: #efd298; --line: #567464; --button-text: #173b2e; --font-display: Georgia, "Times New Roman", serif; --holiday-art: url("./artwork/christmas.svg?v=bf5dc55ff94c33f5"); }
 
 /* Self-contained overlay for the production base; section order stays in the DOM. */
 body { background: var(--bg); }

@@ -1,6 +1,6 @@
-import { resolveTheme, sectionOrder, themeIds, allThemeIds } from './theme.mjs?v=c263b7c3bc10b25e';
-import { holidayForDate } from './holiday-calendar.mjs?v=c263b7c3bc10b25e';
-import { holidayNotices } from '../themes/holidays.mjs?v=c263b7c3bc10b25e';
+import { resolveTheme, sectionOrder, allThemeIds } from './theme.mjs?v=bf5dc55ff94c33f5';
+import { holidayForDate } from './holiday-calendar.mjs?v=bf5dc55ff94c33f5';
+import { holidayNotices } from '../themes/holidays.mjs?v=bf5dc55ff94c33f5';
 const preferenceKey = 'marcomc-theme';
 const assetQuery = new URL(import.meta.url).search;
 const storage = {
@@ -50,11 +50,10 @@ async function init() {
   const requested = new URLSearchParams(location.search).get('theme');
   const saved = storage.get();
   const initial = allThemeIds.includes(requested) || requested === 'auto' ? requested
-    : themeIds.includes(saved) || saved === 'auto' ? saved : manifest.default;
+    : allThemeIds.includes(saved) || saved === 'auto' ? saved : manifest.default;
   let choice = initial;
   let calendarDay = new Date().toDateString();
-  selector.value = themeIds.includes(initial) || initial === 'auto' ? initial
-    : themeIds.includes(saved) || saved === 'auto' ? saved : manifest.default;
+  selector.value = initial;
   await apply(initial);
   document.querySelector('.theme-control').hidden = false;
   selector.addEventListener('change', async () => {

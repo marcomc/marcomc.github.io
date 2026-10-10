@@ -1,5 +1,5 @@
 /* easter: original festive direction for Marco Massari Calderone. */
-:root { color-scheme: light; --bg: #faf7ef; --surface: #efe9dd; --text: #24372d; --muted: #516157; --accent: #46634a; --line: #c0c8b8; --button-text: #ffffff; --font-display: Georgia, "Times New Roman", serif; --holiday-art: url("./artwork/easter.svg?v=c263b7c3bc10b25e"); }
+:root { color-scheme: light; --bg: #faf7ef; --surface: #efe9dd; --text: #24372d; --muted: #516157; --accent: #46634a; --line: #c0c8b8; --button-text: #ffffff; --font-display: Georgia, "Times New Roman", serif; --holiday-art: url("./artwork/easter.svg?v=bf5dc55ff94c33f5"); }
 
 /* Self-contained overlay for the production base; section order stays in the DOM. */
 body { background: var(--bg); }
