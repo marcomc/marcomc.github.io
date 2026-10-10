@@ -1,11 +1,12 @@
-import { resolveTheme, sectionOrder, themeIds } from './theme.mjs';
+import { resolveTheme, sectionOrder, themeIds } from './theme.mjs?v=1c4cfcd5e39a9f0f';
 const preferenceKey = 'marcomc-theme';
+const assetQuery = new URL(import.meta.url).search;
 const storage = {
   get() { try { return localStorage.getItem(preferenceKey); } catch { return null; } },
   set(value) { try { localStorage.setItem(preferenceKey, value); } catch { /* Preferences are optional when browser storage is unavailable. */ } }
 };
 async function init() {
-  const response = await fetch('/themes/manifest.json');
+  const response = await fetch(`/themes/manifest.json${assetQuery}`);
   if (!response.ok) return;
   const manifest = await response.json();
   if (!Array.isArray(manifest.themes) || !manifest.themes.length) return;
@@ -19,10 +20,11 @@ async function init() {
     const theme = resolveTheme({ requested:choice, saved:storage.get(), month:new Date().getMonth()+1, manifest });
     if (!themeIds.includes(theme)) return;
     const current = document.getElementById('theme-stylesheet');
-    if (!current.href.endsWith(`/${theme}.css`)) {
+    const stylesheetURL = `/themes/${theme}.css${assetQuery}`;
+    if (current.href !== new URL(stylesheetURL, location.origin).href) {
       const sheet = document.createElement('link');
       sheet.rel = 'stylesheet';
-      sheet.href = `/themes/${theme}.css`;
+      sheet.href = stylesheetURL;
       const loaded = new Promise(resolve => { sheet.onload = () => resolve(true); sheet.onerror = () => resolve(false); });
       document.head.append(sheet);
       if (!await loaded || currentId !== changeId) { sheet.remove(); return; }

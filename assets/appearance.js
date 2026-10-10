@@ -12,5 +12,5 @@ const theme = (function resolveTheme({ requested, saved, month, manifest }) {
   }
   return manifest.default;
 })({requested, saved, month:new Date().getMonth()+1, manifest});
-if (themeIds.includes(theme)) document.getElementById('theme-stylesheet').href = '/themes/' + theme + '.css';
+if (themeIds.includes(theme)) document.getElementById('theme-stylesheet').href = '/themes/' + theme + '.css?v=1c4cfcd5e39a9f0f';
 })();
