@@ -1,6 +1,7 @@
 (() => {
-const allThemeIds = ["tide","fieldnotes","circuit","atelier","easter","new-year","christmas","halloween","carnival","epiphany"];
-const holidayThemes = [{"id":"easter","label":"Easter · Petal","names":{"en":"Easter","fr":"Pâques","it":"Pasqua","pt":"Páscoa"},"rule":{"type":"easter","offset":0},"description":"Ivory, botanical green and lilac; an oval portrait and open editorial rows."},{"id":"new-year","label":"New Year · First Light","names":{"en":"New Year","fr":"Nouvel An","it":"Capodanno","pt":"Ano Novo"},"rule":{"type":"fixed","month":1,"days":[1]},"description":"Ink and champagne; a radial sunrise, fine rules and geometric panels."},{"id":"christmas","label":"Christmas · Evergreen","names":{"en":"Christmas","fr":"Noël","it":"Natale","pt":"Natal"},"rule":{"type":"fixed","month":12,"days":[24,25,26]},"description":"Forest green and warm brass; evergreen branches and a framed, book-like composition."},{"id":"halloween","label":"Halloween · Ember","names":{"en":"Halloween","fr":"Halloween","it":"Halloween","pt":"Halloween"},"rule":{"type":"fixed","month":10,"days":[31]},"description":"Aubergine and copper; a moonlit arch, bold headings and asymmetric outlines."},{"id":"carnival","label":"Carnival · Chromatic","names":{"en":"Shrove Tuesday","fr":"Mardi gras","it":"Carnevale","pt":"Carnaval"},"rule":{"type":"easter","offset":-47},"description":"Pale lilac, plum and teal; a folded fan, vivid edges and playful geometric framing."},{"id":"epiphany","label":"Epiphany · North Star","names":{"en":"Epiphany","fr":"Épiphanie","it":"Befana","pt":"Dia de Reis"},"rule":{"type":"fixed","month":1,"days":[6]},"description":"Midnight indigo and ice blue; a guiding star, constellation lines and quiet rounded panels."}];
+const allThemeIds = ["tide","fieldnotes","circuit","atelier","easter","new-year","christmas","halloween","carnival","epiphany","high-contrast","grayscale"];
+const accessibilityThemeIds = ["high-contrast","grayscale"];
+const holidayThemes = [{"id":"easter","label":"Easter · Petal","names":{"en":"Easter","fr":"Pâques","it":"Pasqua","pt":"Páscoa"},"rule":{"type":"easter","offset":0},"description":"Ivory, botanical green and lilac; a rabbit, decorated eggs and botanical sprigs."},{"id":"new-year","label":"New Year · First Light","names":{"en":"New Year","fr":"Nouvel An","it":"Capodanno","pt":"Ano Novo"},"rule":{"type":"fixed","month":1,"days":[1]},"description":"Ink and champagne; a midnight clock, fireworks and geometric panels."},{"id":"christmas","label":"Christmas · Evergreen","names":{"en":"Christmas","fr":"Noël","it":"Natale","pt":"Natal"},"rule":{"type":"fixed","month":12,"days":[24,25,26]},"description":"Forest green and warm brass; a fir tree, gifts, baubles and a framed composition."},{"id":"halloween","label":"Halloween · Ember","names":{"en":"Halloween","fr":"Halloween","it":"Halloween","pt":"Halloween"},"rule":{"type":"fixed","month":10,"days":[31]},"description":"Aubergine and copper; a smiling pumpkin, ghost, bats and a moonlit arch."},{"id":"carnival","label":"Carnival · Chromatic","names":{"en":"Shrove Tuesday","fr":"Mardi gras","it":"Carnevale","pt":"Carnaval"},"rule":{"type":"easter","offset":-47},"description":"Pale lilac, plum and teal; a mask, harlequin diamonds, ribbons and vivid edges."},{"id":"epiphany","label":"Epiphany · North Star","names":{"en":"Epiphany","fr":"Épiphanie","it":"Befana","pt":"Dia de Reis"},"rule":{"type":"fixed","month":1,"days":[6]},"description":"Midnight indigo and ice blue; Befana on her broom, a stocking and star trails."}];
 const gregorianEaster = function gregorianEaster(year) {
   if (!Number.isInteger(year) || year < 1583 || year > 9999) {
     throw new RangeError('Gregorian Easter requires a year from 1583 to 9999.');
@@ -44,6 +45,9 @@ let saved;
 try { saved = localStorage.getItem('marcomc-theme'); } catch {}
 const requested = new URLSearchParams(location.search).get('theme');
 const theme = (function resolveTheme({ requested, saved, date = new Date(), month = date.getMonth() + 1, manifest }) {
+  const choice = allThemeIds.includes(requested) || requested === 'auto' ? requested : saved;
+  // A calendar event must never displace an explicit readability preference.
+  if (accessibilityThemeIds.includes(choice)) return choice;
   const holiday = holidayForDate(date);
   if (holiday) return holiday.id;
   if (allThemeIds.includes(requested)) return requested;
@@ -53,5 +57,5 @@ const theme = (function resolveTheme({ requested, saved, date = new Date(), mont
   }
   return manifest.default;
 })({requested, saved, date:new Date(), manifest});
-if (allThemeIds.includes(theme)) document.getElementById('theme-stylesheet').href = '/themes/' + theme + '.css?v=bf5dc55ff94c33f5';
+if (allThemeIds.includes(theme)) document.getElementById('theme-stylesheet').href = '/themes/' + theme + '.css?v=6d3597b5f50e693d';
 })();

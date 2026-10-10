@@ -1,4 +1,5 @@
-import { holidayThemes } from '../themes/holidays.mjs?v=bf5dc55ff94c33f5';
+import { holidayThemes } from '../themes/holidays.mjs?v=6d3597b5f50e693d';
+import { accessibilityThemeIds } from '../themes/accessibility.mjs?v=6d3597b5f50e693d';
 
 // Gregorian computus (Meeus/Jones/Butcher). Return a local civil date at noon,
 // avoiding UTC conversion and daylight-saving transitions around midnight.
@@ -47,5 +48,6 @@ export function holidayForDate(date = new Date()) {
 // Apply this after resolving the ordinary preference, including URL previews.
 // Keep ordinaryTheme and the saved preference unchanged so they resume afterwards.
 export function withHolidayTheme(ordinaryTheme, date = new Date()) {
+  if (accessibilityThemeIds.includes(ordinaryTheme)) return ordinaryTheme;
   return holidayForDate(date)?.id ?? ordinaryTheme;
 }

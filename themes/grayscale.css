@@ -1,0 +1,45 @@
+/* Quiet photographic/editorial study, entirely in neutral tones. */
+:root {
+  color-scheme: light;
+  --bg: #f5f5f5;
+  --surface: #eaeaea;
+  --text: #202020;
+  --muted: #515151;
+  --accent: #383838;
+  --line: #9b9b9b;
+  --radius: 2px;
+  --font-display: "Iowan Old Style", Georgia, serif;
+  --ornament-scene: url("/themes/artwork/ornaments/grayscale-scene.svg?v=6d3597b5f50e693d");
+  --ornament-detail: url("/themes/artwork/ornaments/grayscale-detail.svg?v=6d3597b5f50e693d");
+  --ornament-edge: url("/themes/artwork/ornaments/grayscale-edge.svg?v=6d3597b5f50e693d");
+}
+body { background: var(--bg); }
+.site-header { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; border-bottom: 2px solid var(--text); }
+.brand-mark { display: inline-flex; justify-content: center; align-items: center; flex-shrink: 0; }
+.page-shell > section, .hero-copy { min-width: 0; }
+.hero { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 5%; }
+.hero h1 { font-weight: 400; }
+.portrait { filter: grayscale(1); border-radius: 2px; box-shadow: 12px 12px 0 #dedede; }
+.portrait-orbit { display: none; }
+.button { border-radius: 2px; background: var(--text); color: #fff; }
+.status-dot { box-shadow: none; }
+.service-card, .project-card { border-width: 1px 0 0; border-radius: 0; background: transparent; }
+.service-card h3, .project-card h3 { overflow-wrap: anywhere; }
+.service-card { background: linear-gradient(145deg, #fff9, #e5e5e555); }
+.contact-panel { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--text); }
+.contact-email { max-width: 100%; gap: .6rem; }
+.portrait-frame::after { opacity: .6; }
+@media (max-width: 1000px) {
+  .site-header { grid-template-columns: minmax(0, 1fr) auto; padding-block: 1.5rem; }
+  .primary-nav { grid-column: 1 / -1; grid-row: 2; width: 100%; justify-content: space-between; margin-left: 0; }
+  .language-switch { grid-column: 2; grid-row: 1; }
+}
+@media (max-width: 700px) {
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr); padding-block: 3rem; }
+  .hero h1 { font-size: clamp(2.6rem, 11vw, 4rem); }
+  .hero-visual { width: 100%; max-width: 380px; margin-inline: auto; }
+  .service-grid, .project-grid, .about-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { .button, .service-card { transition: none; } }
+@media (forced-colors: active) { .portrait { filter: none; box-shadow: none; border: 1px solid CanvasText; } }
+@media print { :root { --bg: white; --surface: white; --text: black; --muted: black; --accent: black; --line: #777; } }

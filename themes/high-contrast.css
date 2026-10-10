@@ -1,0 +1,52 @@
+/* Readability first: no gradients, decorative artwork or motion. */
+:root {
+  color-scheme: dark;
+  --bg: #000000;
+  --surface: #101010;
+  --text: #ffffff;
+  --muted: #eeeeee;
+  --accent: #ffed80;
+  --line: #cccccc;
+  --radius: 6px;
+}
+body { background: var(--bg); }
+h1, h2, h3 { letter-spacing: -.025em; font-weight: 650; }
+.site-header { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; }
+.brand-mark { display: inline-flex; justify-content: center; align-items: center; flex-shrink: 0; }
+.page-shell > section, .hero-copy { min-width: 0; }
+.hero { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); }
+.hero h1 { font-size: clamp(2.6rem, 5vw, 5rem); }
+.portrait { border-radius: 6px; box-shadow: none; }
+.portrait-orbit { display: none; }
+.status-dot { box-shadow: none; }
+a { text-decoration: underline; text-decoration-thickness: 2px; }
+.brand, .button, .footer-wordmark { text-decoration: none; }
+.primary-nav a { text-decoration: underline; }
+.primary-nav a[aria-current="page"], .language-switch a[aria-current] { text-decoration-thickness: 3px; }
+.service-card, .project-card, .contact-panel { border: 2px solid var(--line); box-shadow: none; }
+.service-card h3, .project-card h3 { overflow-wrap: anywhere; }
+.button { background: var(--accent); color: #000; border: 2px solid var(--accent); }
+a:focus-visible, button:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--accent); outline-offset: 5px;
+}
+.button, .service-card { transition: none; }
+.button:hover, .service-card:hover { transform: none; box-shadow: none; }
+.theme-control select { border: 2px solid var(--line); }
+.contact-email { max-width: 100%; gap: .6rem; }
+.portrait-frame::after, .hero::after, .section::before,
+.service-card:nth-child(3n + 1)::after, .project-card:nth-child(2n)::after,
+.contact-panel::before, .contact-panel::after, .site-footer::after { display: none; }
+@media (max-width: 1000px) {
+  .site-header { grid-template-columns: minmax(0, 1fr) auto; padding-block: 1.5rem; }
+  .primary-nav { grid-column: 1 / -1; grid-row: 2; width: 100%; justify-content: space-between; margin-left: 0; }
+  .language-switch { grid-column: 2; grid-row: 1; }
+}
+@media (max-width: 700px) {
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr); padding-block: 3rem; }
+  .hero h1 { font-size: clamp(2.4rem, 10vw, 3.6rem); }
+  .hero-visual { width: 100%; max-width: 380px; margin-inline: auto; }
+  .service-grid, .project-grid, .about-grid { grid-template-columns: minmax(0, 1fr); }
+  .service-card, .project-card { padding: 1.5rem; }
+}
+@media (forced-colors: active) { .portrait { border: 1px solid CanvasText; } }
+@media print { :root { --bg: white; --surface: white; --text: black; --muted: black; --accent: black; --line: black; } }

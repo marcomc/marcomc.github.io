@@ -1,6 +1,6 @@
-import { resolveTheme, sectionOrder, allThemeIds } from './theme.mjs?v=bf5dc55ff94c33f5';
-import { holidayForDate } from './holiday-calendar.mjs?v=bf5dc55ff94c33f5';
-import { holidayNotices } from '../themes/holidays.mjs?v=bf5dc55ff94c33f5';
+import { resolveTheme, sectionOrder, allThemeIds } from './theme.mjs?v=6d3597b5f50e693d';
+import { holidayForDate } from './holiday-calendar.mjs?v=6d3597b5f50e693d';
+import { holidayNotices } from '../themes/holidays.mjs?v=6d3597b5f50e693d';
 const preferenceKey = 'marcomc-theme';
 const assetQuery = new URL(import.meta.url).search;
 const storage = {
@@ -41,7 +41,8 @@ async function init() {
     }
     document.body.dataset.theme = theme;
     for (const id of sectionOrder(manifest, theme, document.body.dataset.page, existing)) main.append(sections.find(s => s.dataset.section === id));
-    const holiday = holidayForDate(date);
+    const today = holidayForDate(date);
+    const holiday = today?.id === theme ? today : null;
     const lang = document.documentElement.lang;
     holidayNote.textContent = holiday ? (holidayNotices[lang] ?? holidayNotices.en)
       .replace('{holiday}', holiday.names[lang] ?? holiday.names.en) : '';
