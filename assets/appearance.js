@@ -1,7 +1,7 @@
 (() => {
 const allThemeIds = ["tide","fieldnotes","circuit","atelier","easter","new-year","christmas","halloween","carnival","epiphany","high-contrast","grayscale"];
 const accessibilityThemeIds = ["high-contrast","grayscale"];
-const holidayThemes = [{"id":"easter","label":"Easter · Petal","names":{"en":"Easter","fr":"Pâques","it":"Pasqua","pt":"Páscoa"},"rule":{"type":"easter","offset":0},"description":"Ivory, botanical green and lilac; a rabbit, decorated eggs and botanical sprigs."},{"id":"new-year","label":"New Year · First Light","names":{"en":"New Year","fr":"Nouvel An","it":"Capodanno","pt":"Ano Novo"},"rule":{"type":"fixed","month":1,"days":[1]},"description":"Ink and champagne; a midnight clock, fireworks and geometric panels."},{"id":"christmas","label":"Christmas · Evergreen","names":{"en":"Christmas","fr":"Noël","it":"Natale","pt":"Natal"},"rule":{"type":"fixed","month":12,"days":[24,25,26]},"description":"Forest green and warm brass; a fir tree, gifts, baubles and a framed composition."},{"id":"halloween","label":"Halloween · Ember","names":{"en":"Halloween","fr":"Halloween","it":"Halloween","pt":"Halloween"},"rule":{"type":"fixed","month":10,"days":[31]},"description":"Aubergine and copper; a smiling pumpkin, ghost, bats and a moonlit arch."},{"id":"carnival","label":"Carnival · Chromatic","names":{"en":"Shrove Tuesday","fr":"Mardi gras","it":"Carnevale","pt":"Carnaval"},"rule":{"type":"easter","offset":-47},"description":"Pale lilac, plum and teal; a mask, harlequin diamonds, ribbons and vivid edges."},{"id":"epiphany","label":"Epiphany · North Star","names":{"en":"Epiphany","fr":"Épiphanie","it":"Befana","pt":"Dia de Reis"},"rule":{"type":"fixed","month":1,"days":[6]},"description":"Midnight indigo and ice blue; Befana on her broom, a stocking and star trails."}];
+const holidayThemes = [{"id":"easter","label":"Easter · Petal","names":{"es":"Pascua","en":"Easter","fr":"Pâques","it":"Pasqua","pt":"Páscoa"},"rule":{"type":"easter","offset":0},"description":"Ivory, botanical green and lilac; a rabbit, decorated eggs and botanical sprigs."},{"id":"new-year","label":"New Year · First Light","names":{"es":"Año Nuevo","en":"New Year","fr":"Nouvel An","it":"Capodanno","pt":"Ano Novo"},"rule":{"type":"fixed","month":1,"days":[1]},"description":"Ink and champagne; a midnight clock, fireworks and geometric panels."},{"id":"christmas","label":"Christmas · Evergreen","names":{"es":"Navidad","en":"Christmas","fr":"Noël","it":"Natale","pt":"Natal"},"rule":{"type":"fixed","month":12,"days":[24,25,26]},"description":"Forest green and warm brass; a fir tree, gifts, baubles and a framed composition."},{"id":"halloween","label":"Halloween · Ember","names":{"es":"Halloween","en":"Halloween","fr":"Halloween","it":"Halloween","pt":"Halloween"},"rule":{"type":"fixed","month":10,"days":[31]},"description":"Aubergine and copper; a smiling pumpkin, ghost, bats and a moonlit arch."},{"id":"carnival","label":"Carnival · Chromatic","names":{"es":"Martes de Carnaval","en":"Shrove Tuesday","fr":"Mardi gras","it":"Carnevale","pt":"Carnaval"},"rule":{"type":"easter","offset":-47},"description":"Pale lilac, plum and teal; a mask, harlequin diamonds, ribbons and vivid edges."},{"id":"epiphany","label":"Epiphany · North Star","names":{"es":"Día de Reyes","en":"Epiphany","fr":"Épiphanie","it":"Befana","pt":"Dia de Reis"},"rule":{"type":"fixed","month":1,"days":[6]},"description":"Midnight indigo and ice blue; Befana on her broom, a stocking and star trails."}];
 const gregorianEaster = function gregorianEaster(year) {
   if (!Number.isInteger(year) || year < 1583 || year > 9999) {
     throw new RangeError('Gregorian Easter requires a year from 1583 to 9999.');
@@ -58,8 +58,8 @@ const theme = (function resolveTheme({ requested, saved, date = new Date(), mont
   return manifest.default;
 })({requested, saved, date:new Date(), manifest});
 const stylesheet = document.getElementById('theme-stylesheet');
-const fallback = '/themes/tide.css?v=4b854213ccd33ef4';
-const themeLoadErrors = {"en":"This appearance could not load. The page remains available. Try again.","fr":"Cette apparence n’a pas pu être chargée. La page reste accessible. Réessayez.","it":"Impossibile caricare il tema. La pagina resta disponibile. Riprova.","pt":"Não foi possível carregar esta aparência. A página continua disponível. Tente novamente."};
+const fallback = '/themes/tide.css?v=7903b2115ed17484';
+const themeLoadErrors = {"es":"No se ha podido cargar esta apariencia. La página sigue disponible. Inténtalo de nuevo.","en":"This appearance could not load. The page remains available. Try again.","fr":"Cette apparence n’a pas pu être chargée. La page reste accessible. Réessayez.","it":"Impossibile caricare il tema. La pagina resta disponibile. Riprova.","pt":"Não foi possível carregar esta aparência. A página continua disponível. Tente novamente."};
 const isThemeStylesheetLoaded = function isThemeStylesheetLoaded(link) {
   // Failed requests can leave a sheet whose cssRules getter throws SecurityError.
   try { return Boolean(link.sheet?.cssRules.length); } catch { return false; }
@@ -81,7 +81,7 @@ stylesheet.addEventListener('error', () => {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', showLoadError, {once:true});
   else showLoadError();
 });
-if (allThemeIds.includes(theme)) stylesheet.href = '/themes/' + theme + '.css?v=4b854213ccd33ef4';
+if (allThemeIds.includes(theme)) stylesheet.href = '/themes/' + theme + '.css?v=7903b2115ed17484';
 // A preceding parser-loaded stylesheet can fail before this script attaches its
 // listener. Reconcile that already-completed default request after DOM readiness.
 if (theme === 'tide') document.addEventListener('DOMContentLoaded', () => {

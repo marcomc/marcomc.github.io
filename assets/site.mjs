@@ -1,6 +1,6 @@
-import { resolveTheme, sectionOrder, allThemeIds, themeLoadErrors, isThemeStylesheetLoaded } from './theme.mjs?v=4b854213ccd33ef4';
-import { holidayForDate } from './holiday-calendar.mjs?v=4b854213ccd33ef4';
-import { holidayNotices } from '../themes/holidays.mjs?v=4b854213ccd33ef4';
+import { resolveTheme, sectionOrder, allThemeIds, themeLoadErrors, isThemeStylesheetLoaded } from './theme.mjs?v=7903b2115ed17484';
+import { holidayForDate } from './holiday-calendar.mjs?v=7903b2115ed17484';
+import { holidayNotices } from '../themes/holidays.mjs?v=7903b2115ed17484';
 const preferenceKey = 'marcomc-theme';
 const assetQuery = new URL(import.meta.url).search;
 const storage = {

@@ -9,3 +9,47 @@
 @media print{.site-header,.site-footer,.hero-visual,.hero-actions{display:none}body{background:white;color:black}.page-shell{width:100%}.hero,.section{padding:1rem 0;min-height:0}.hero{display:block}h1,h2{font-size:2rem}.service-grid,.project-grid{grid-template-columns:repeat(2,1fr)}.service-card,.project-card{break-inside:avoid}p,.lede{color:black!important}}
 
 .visitor-statistics{margin-top:1rem;font-size:.78rem;color:var(--muted)}.visitor-statistics a{display:inline-block;min-height:44px;padding-block:.65rem}.visitor-statistics strong{font-variant-numeric:tabular-nums;color:var(--text)}
+
+/* Small editorial signposts keep services, evidence and enquiry connected. */
+.page-jumps{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.4rem 1.8rem;border-top:1px solid var(--line);padding-top:1rem;font-size:.8rem}
+.page-jumps a{padding:.4rem 0;min-height:44px;display:inline-flex;align-items:center}
+.service-example{margin-top:1.1rem;font-size:.78rem;color:var(--text);min-height:44px;display:flex;align-items:center;gap:.5rem}
+[id]{scroll-margin-top:2rem}
+.project-flow{display:flex;align-items:center;gap:.6rem;min-height:100px;margin-bottom:1.8rem;padding:1rem;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--accent);font-family:ui-monospace,monospace;font-size:.72rem}
+.project-flow span{flex:1;min-width:0;overflow-wrap:anywhere;text-align:center}
+.project-flow b{font-weight:400;flex:none}
+.project-faq{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);max-width:75ch}
+.project-faq h3{margin-bottom:1rem}
+.project-faq details{font-size:.9rem;border-bottom:1px solid var(--line);padding-block:.6rem}
+.project-faq summary{color:var(--text);padding-block:.7rem;min-height:44px;width:100%}
+.project-faq details p{padding-bottom:1rem}
+@media(max-width:600px){.project-flow{gap:.4rem;padding:.8rem;font-size:.65rem}.page-jumps{gap:.2rem 1.2rem}}
+@media(forced-colors:active){.project-flow{color:CanvasText;border-color:CanvasText}}
+
+
+/* Keep the introduction conversational across theme-specific display styles. */
+body[data-page] .hero h1 {
+  font-size: clamp(2rem, 3.3vw, 3.3rem);
+  line-height: 1.16;
+  letter-spacing: -.035em;
+  max-width: 23ch;
+}
+body[data-page="bio"] .hero h1 {
+  font-size: clamp(1.9rem, 2.8vw, 2.75rem);
+  max-width: 25ch;
+}
+@media print {
+  body[data-page] .hero h1 { font-size: 2rem; }
+}
+
+.languages-heading { margin-block: 2rem .75rem; }
+@media (max-width: 600px) {
+  body[data-page] .site-header { display: flex; flex-wrap: wrap; gap: 1rem; }
+  body[data-page] .language-switch { flex-wrap: wrap; }
+}
+
+.credentials { margin-top: 2.5rem; }
+.credentials article { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.credentials h4 { margin: 0 0 .75rem; font-size: 1rem; }
+.credentials li { margin-block: .5rem; }
+.credential-code { font-size: .75rem; overflow-wrap: anywhere; color: var(--muted); }

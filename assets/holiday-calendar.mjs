@@ -1,5 +1,5 @@
-import { holidayThemes } from '../themes/holidays.mjs?v=4b854213ccd33ef4';
-import { accessibilityThemeIds } from '../themes/accessibility.mjs?v=4b854213ccd33ef4';
+import { holidayThemes } from '../themes/holidays.mjs?v=7903b2115ed17484';
+import { accessibilityThemeIds } from '../themes/accessibility.mjs?v=7903b2115ed17484';
 
 // Gregorian computus (Meeus/Jones/Butcher). Return a local civil date at noon,
 // avoiding UTC conversion and daylight-saving transitions around midnight.

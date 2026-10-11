@@ -1,5 +1,5 @@
 /* christmas: original festive direction for Marco Massari Calderone. */
-:root { color-scheme: dark; --bg: #112c27; --surface: #1b3c32; --text: #faf3e5; --muted: #c3cdbf; --accent: #efd298; --line: #567464; --button-text: #173b2e; --font-display: Georgia, "Times New Roman", serif; --holiday-art: url("./artwork/christmas.svg?v=4b854213ccd33ef4"); }
+:root { color-scheme: dark; --bg: #112c27; --surface: #1b3c32; --text: #faf3e5; --muted: #c3cdbf; --accent: #efd298; --line: #567464; --button-text: #173b2e; --font-display: Georgia, "Times New Roman", serif; --holiday-art: url("./artwork/christmas.svg?v=7903b2115ed17484"); }
 
 /* Self-contained overlay for the production base; section order stays in the DOM. */
 body { background: var(--bg); }
@@ -91,9 +91,9 @@ body { background: var(--bg); }
 
 /* Original small illustrations, shared placement in assets/ornaments.css. */
 :root {
-  --ornament-scene: url("/themes/artwork/ornaments/christmas-scene.svg?v=4b854213ccd33ef4");
-  --ornament-detail: url("/themes/artwork/ornaments/christmas-detail.svg?v=4b854213ccd33ef4");
-  --ornament-edge: url("/themes/artwork/ornaments/christmas-edge.svg?v=4b854213ccd33ef4");
+  --ornament-scene: url("/themes/artwork/ornaments/christmas-scene.svg?v=7903b2115ed17484");
+  --ornament-detail: url("/themes/artwork/ornaments/christmas-detail.svg?v=7903b2115ed17484");
+  --ornament-edge: url("/themes/artwork/ornaments/christmas-edge.svg?v=7903b2115ed17484");
 }
 @media screen and (forced-colors: none) {
   .service-card { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--accent), transparent 89%), 0 8px 22px -16px #0009; }

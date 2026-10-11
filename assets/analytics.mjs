@@ -6,7 +6,7 @@ export function analyticsVisit({href, referrer = '', doNotTrack, windowDoNotTrac
   if (page.origin !== 'https://marcomc.com' || doNotTrack === '1' || windowDoNotTrack === '1' || globalPrivacyControl || webdriver) return null;
   // Only generated public pages are counted. Never send queries, fragments or
   // arbitrary paths from missing URLs, which can contain private information.
-  if (!/^\/(?:fr\/|it\/|pt\/)?(?:bio\/|privacy\/)?$/.test(page.pathname)) return null;
+  if (!/^\/(?:fr\/|it\/|es\/|pt\/)?(?:bio\/|privacy\/)?$/.test(page.pathname)) return null;
   let source = '';
   try {
     const referringPage = new URL(referrer);

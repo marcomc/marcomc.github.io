@@ -4,12 +4,12 @@ body { background: radial-gradient(ellipse at 90% 15%, #14455355 0, transparent 
 .site-header { display: grid; grid-template-columns: 1fr auto auto; border-bottom: 1px solid var(--line); }
 .page-shell { display: grid; grid-template-columns: minmax(0, 1fr); }
 .brand-mark { border-color: var(--accent); color: var(--accent); }
-.hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 5vw, 5rem); padding-block: 4.5rem 5.5rem; }
-.hero h1 { max-width: 9.5ch; font-weight: 400; }
+.hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(2rem, 4vw, 4rem); min-height: 0; padding-block: 3rem 3.5rem; }
+.hero h1 { max-width: 16ch; font-size: clamp(2.5rem, 4.4vw, 4.4rem); font-weight: 400; }
 .hero .eyebrow::before { content: ""; display: inline-block; width: .4rem; height: .4rem; margin-right: .7rem; background: var(--accent); border-radius: 50%; vertical-align: .1em; box-shadow: 0 0 16px #7bdfc470; }
 .hero-visual { padding: 1.2rem 0 0 1.2rem; }
 .hero-visual::before { content: ""; position: absolute; inset: 0 2rem 3.5rem 0; border: 1px solid var(--line); border-radius: 46% 46% 3px 3px; z-index: -1; }
-.portrait { border-radius: 46% 46% 3px 3px; aspect-ratio: .95; box-shadow: 0 30px 70px #0003; }
+.portrait { border-radius: 46% 46% 3px 3px; aspect-ratio: 1.15; box-shadow: 0 30px 70px #0003; }
 .visual-caption { padding-inline: .3rem; }
 .button { border-radius: 3rem; color: #08251f; }
 .proof-strip { grid-template-columns: repeat(3, 1fr); padding-block: 2.2rem; }
@@ -30,7 +30,7 @@ body { background: radial-gradient(ellipse at 90% 15%, #14455355 0, transparent 
 .hero .eyebrow:has(.status-dot)::before { content: none; }
 .portrait-frame + .visual-caption { margin-top: 1.5rem; }
 @media (max-width: 800px) { .site-header { grid-template-columns: 1fr auto; } .primary-nav { grid-row: 2; grid-column: 1/-1; width: 100%; } .language-switch { grid-row: 1; grid-column: 2; } .stats-grid .stat { flex-direction: column; align-items: flex-start; } }
-@media (max-width: 700px) { .hero { display: grid; grid-template-columns: 1fr; padding-block: 3rem; } .hero h1 { max-width: 11ch; } .hero-visual { width: 100%; max-width: 480px; justify-self: center; } .portrait { aspect-ratio: 1.12; } .stat:not(:first-child) { padding-left: .8rem; } .proof-strip { gap: .7rem; } }
+@media (max-width: 700px) { .hero { display: grid; grid-template-columns: 1fr; padding-block: 3rem; } .hero h1 { max-width: 16ch; } .hero-visual { width: 100%; max-width: 480px; justify-self: center; } .portrait { aspect-ratio: 1.12; } .stat:not(:first-child) { padding-left: .8rem; } .proof-strip { gap: .7rem; } }
 
 /* Preserve intrinsic sizing with the production markup. */
 .page-shell > section, .hero-copy { min-width: 0; }
@@ -38,9 +38,9 @@ body { background: radial-gradient(ellipse at 90% 15%, #14455355 0, transparent 
 
 /* Original small illustrations, shared placement in assets/ornaments.css. */
 :root {
-  --ornament-scene: url("/themes/artwork/ornaments/tide-scene.svg?v=4b854213ccd33ef4");
-  --ornament-detail: url("/themes/artwork/ornaments/tide-detail.svg?v=4b854213ccd33ef4");
-  --ornament-edge: url("/themes/artwork/ornaments/tide-edge.svg?v=4b854213ccd33ef4");
+  --ornament-scene: url("/themes/artwork/ornaments/tide-scene.svg?v=7903b2115ed17484");
+  --ornament-detail: url("/themes/artwork/ornaments/tide-detail.svg?v=7903b2115ed17484");
+  --ornament-edge: url("/themes/artwork/ornaments/tide-edge.svg?v=7903b2115ed17484");
 }
 @media screen and (forced-colors: none) {
   .service-card { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--accent), transparent 89%), 0 8px 22px -16px #0009; }

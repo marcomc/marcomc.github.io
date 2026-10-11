@@ -61,10 +61,13 @@ body { background-image: radial-gradient(#6a715019 .6px, transparent .6px); back
 
 /* Original small illustrations, shared placement in assets/ornaments.css. */
 :root {
-  --ornament-scene: url("/themes/artwork/ornaments/fieldnotes-scene.svg?v=4b854213ccd33ef4");
-  --ornament-detail: url("/themes/artwork/ornaments/fieldnotes-detail.svg?v=4b854213ccd33ef4");
-  --ornament-edge: url("/themes/artwork/ornaments/fieldnotes-edge.svg?v=4b854213ccd33ef4");
+  --ornament-scene: url("/themes/artwork/ornaments/fieldnotes-scene.svg?v=7903b2115ed17484");
+  --ornament-detail: url("/themes/artwork/ornaments/fieldnotes-detail.svg?v=7903b2115ed17484");
+  --ornament-edge: url("/themes/artwork/ornaments/fieldnotes-edge.svg?v=7903b2115ed17484");
 }
 @media screen and (forced-colors: none) {
   .project-card { box-shadow: inset 0 1px 0 #ffffff50, 0 12px 25px -22px color-mix(in srgb, var(--text), transparent 60%); }
 }
+
+/* Long translated headings must fit the narrow editorial column. */
+.section-heading > * { min-width: 0; overflow-wrap: anywhere; }

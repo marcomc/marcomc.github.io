@@ -2,11 +2,11 @@
 
 [Canonical page](https://marcomc.com/)
 
-I’m Marco Massari Calderone. I build applications, websites and the systems behind them — turning a practical problem into something that works beautifully, and keeps working.
+I’m Marco Massari Calderone. I develop applications and websites, connect services through APIs, and automate infrastructure. I can help you build something new or work on a system you already have.
 
-## From first idea to everyday reliability
+## What I can help with
 
-Direct collaboration, clear decisions and hands-on delivery. Bring me a new idea, an existing platform or a workflow that needs to work better.
+Application development, infrastructure and automation. We can start with a specific task or discuss what your project needs.
 
 ### Applications that fit
 
@@ -44,13 +44,13 @@ A fresh pair of eyes on architecture, code quality or a stubborn operational pro
 
 Reviews · Troubleshooting · Technical planning
 
-## Built, shared, improved
+## Selected public projects
 
 A few public examples of how I approach real engineering problems. The code and contributions are there to explore.
 
 ### Splinter
 
-Own open-source project
+Own public project
 
 Ansible-based macOS provisioning that turns workstation setup into a repeatable, versioned process.
 
@@ -70,19 +70,21 @@ Python / Data compatibility
 
 [View contribution #38](https://github.com/ileodo/moneywiz-api/pull/38)
 
-### Workspace
+### Moose Master guide
 
-Merged upstream contributions
+Own public project
 
-Contributions to development-environment tooling, including PHP compatibility and dependency updates.
+An independent, unofficial game guide with a searchable card catalogue and an interface in 21 languages. A public example of a usable multilingual website.
 
-PHP / Developer experience
+JavaScript / Multilingual web
 
-[Workspace](https://github.com/my127/workspace/pull/184)
+[Moose Master guide](https://github.com/marcomc/moose-master-cards-and-rules)
+
+[Visit website](https://moose.marcomc.com/)
 
 ### BMGateway
 
-Own open-source project
+Own public project
 
 A Raspberry Pi battery-monitor gateway connecting Bluetooth telemetry, a web interface, MQTT and Home Assistant.
 
@@ -90,32 +92,46 @@ Python / Connected hardware
 
 [BMGateway](https://github.com/marcomc/BMGateway)
 
-### Tricount Exporter
+### MoneyWiz Tools
 
-Own open-source project
+Own public project
 
-A JavaScript tool for exporting shared-expense records into reusable CSV and spreadsheet formats.
+A macOS command-line toolkit for inspecting personal-finance data, with compatibility checks, dry-run plans and guarded writes through Core Data.
 
-JavaScript / Data portability
+Python · Swift / Data tooling
 
-[Tricount Exporter](https://github.com/marcomc/tricount-exporter)
+[MoneyWiz Tools](https://github.com/marcomc/moneywiz-tools)
 
-### Home Assistant MQTT Agent
+### mcp-osxphotos
 
-Own open-source project
+Own public project
 
-A macOS telemetry agent using MQTT discovery to make system information available in Home Assistant.
+An MCP server connecting AI tools to the osxphotos command-line interface for Apple Photos. Includes client setup documentation and executable health checks.
 
-Python / Automation
+Python / AI integrations
 
-[Home Assistant MQTT Agent](https://github.com/marcomc/ha-mqtt-agent)
+[mcp-osxphotos](https://github.com/marcomc/mcp-osxphotos)
 
-## A clear route from problem to progress
+## How we work together
 
 1. **Understand** — We start with your context, priorities and constraints.
 2. **Agree** — I propose a scope, deliverables and a quote before the work begins.
 3. **Build** — Small, reviewable steps with visible progress and useful feedback.
 4. **Hand over** — Working code, practical documentation and agreed next steps.
+
+## Before we start
+
+### Can you work on an existing project
+
+Yes. We can start with existing code, infrastructure or a process that needs attention. The first step is to understand the context and constraints.
+
+### How is a quote prepared
+
+Tell me what you need, what already exists and any relevant deadlines. We agree the scope, expected deliverables and quote before work starts.
+
+### What happens at handover
+
+The agreed work includes working code, practical documentation and clear next steps. Any further support is discussed as part of the scope.
 
 ## GitHub
 

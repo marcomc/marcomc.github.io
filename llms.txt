@@ -6,33 +6,39 @@ Consulting enquiries and project quotes: [marco@marcomc.com](mailto:marco@marcom
 
 Alongside consulting, I develop personal software projects. These are areas of ongoing development, not a catalogue of commercially available products.
 
-The linked Markdown pages are generated from the same content as the public website. GitHub statistics include their snapshot date and counting method. English is the primary language; French, Italian and Portuguese versions are also available.
+The linked Markdown pages are generated from the same content as the public website. GitHub statistics include their snapshot date and counting method. English is the primary language; Italian, Spanish (Spain), French and Portuguese (Portugal) versions are also available.
 
 ## English
 
-- [Services](https://marcomc.com/index.md): Direct collaboration, clear decisions and hands-on delivery. Bring me a new idea, an existing platform or a workflow that needs to work better.
-- [About me](https://marcomc.com/bio/index.md): The person behind the code.
+- [Services](https://marcomc.com/index.md): Application development, infrastructure and automation. We can start with a specific task or discuss what your project needs.
+- [About me](https://marcomc.com/bio/index.md): About me.
 - [Privacy & site information](https://marcomc.com/privacy/index.md)
-
-## Français
-
-- [Services](https://marcomc.com/fr/index.md): Une collaboration directe, des décisions claires et un travail concret. Confiez-moi une idée, une plateforme existante ou un processus à améliorer.
-- [À propos](https://marcomc.com/fr/bio/index.md): La personne derrière le code.
-- [Confidentialité & informations](https://marcomc.com/fr/privacy/index.md)
 
 ## Italiano
 
-- [Servizi](https://marcomc.com/it/index.md): Collaborazione diretta, scelte chiare e lavoro concreto. Portami una nuova idea, una piattaforma esistente o un processo da migliorare.
-- [Chi sono](https://marcomc.com/it/bio/index.md): La persona dietro il codice.
+- [Servizi](https://marcomc.com/it/index.md): Sviluppo, infrastrutture e automazione. Possiamo partire da un’attività precisa oppure discutere di cosa serve al tuo progetto.
+- [Chi sono](https://marcomc.com/it/bio/index.md): Chi sono.
 - [Privacy & informazioni sul sito](https://marcomc.com/it/privacy/index.md)
 
-## Português
+## Español (España)
 
-- [Serviços](https://marcomc.com/pt/index.md): Colaboração direta, decisões claras e trabalho concreto. Traga uma ideia nova, uma plataforma existente ou um processo que precisa de melhorar.
-- [Sobre mim](https://marcomc.com/pt/bio/index.md): A pessoa por detrás do código.
+- [Servicios](https://marcomc.com/es/index.md): Desarrollo de aplicaciones, infraestructura y automatización. Podemos empezar por una tarea concreta o hablar de lo que necesita tu proyecto.
+- [Sobre mí](https://marcomc.com/es/bio/index.md): Sobre mí.
+- [Privacidad e información del sitio](https://marcomc.com/es/privacy/index.md)
+
+## Français
+
+- [Services](https://marcomc.com/fr/index.md): Développement, infrastructure et automatisation. Nous pouvons partir d’une tâche précise ou discuter des besoins de votre projet.
+- [À propos](https://marcomc.com/fr/bio/index.md): À propos.
+- [Confidentialité & informations](https://marcomc.com/fr/privacy/index.md)
+
+## Português (Portugal)
+
+- [Serviços](https://marcomc.com/pt/index.md): Desenvolvimento, infraestrutura e automação. Podemos começar por uma tarefa concreta ou conversar sobre as necessidades do seu projeto.
+- [Sobre mim](https://marcomc.com/pt/bio/index.md): Sobre mim.
 - [Privacidade & informações do site](https://marcomc.com/pt/privacy/index.md)
 
 ## Optional
 
 - [GitHub profile](https://github.com/marcomc): Public repositories and contributions.
-- [Sitemap](https://marcomc.com/sitemap.xml): Canonical HTML pages in all four languages.
+- [Sitemap](https://marcomc.com/sitemap.xml): Canonical HTML pages in all five languages.

@@ -2,11 +2,11 @@
 
 [Canonical page](https://marcomc.com/it/)
 
-Sono Marco Massari Calderone. Sviluppo applicazioni, siti web e i sistemi che li fanno funzionare: trasformo un problema concreto in una soluzione piacevole da usare e affidabile nel tempo.
+Sono Marco Massari Calderone. Sviluppo applicazioni e siti web, collego servizi tramite API e automatizzo infrastrutture. Posso aiutarti a realizzare un nuovo progetto o a lavorare su un sistema che usi già.
 
-## Dalla prima idea all’affidabilità quotidiana
+## Come posso aiutarti
 
-Collaborazione diretta, scelte chiare e lavoro concreto. Portami una nuova idea, una piattaforma esistente o un processo da migliorare.
+Sviluppo, infrastrutture e automazione. Possiamo partire da un’attività precisa oppure discutere di cosa serve al tuo progetto.
 
 ### Applicazioni su misura
 
@@ -44,13 +44,13 @@ Uno sguardo nuovo su architettura, qualità del codice o un problema operativo o
 
 Revisioni · Diagnosi · Pianificazione tecnica
 
-## Costruire, condividere, migliorare
+## Una selezione di progetti pubblici
 
 Alcuni esempi pubblici di come affronto problemi tecnici reali. Codice e contributi sono disponibili da esplorare.
 
 ### Splinter
 
-Un mio progetto open source
+Un mio progetto pubblico
 
 Provisioning di macOS con Ansible per rendere la configurazione delle postazioni ripetibile e versionata.
 
@@ -70,19 +70,21 @@ Python / Compatibilità dati
 
 [Vedi il contributo #38](https://github.com/ileodo/moneywiz-api/pull/38)
 
-### Workspace
+### Guida Moose Master
 
-Contributi integrati nel progetto
+Un mio progetto pubblico
 
-Contributi agli strumenti per ambienti di sviluppo, con aggiornamenti della compatibilità PHP e delle dipendenze.
+Una guida al gioco indipendente e non ufficiale, con un catalogo di carte ricercabile e un’interfaccia in 21 lingue. Un esempio pubblico di sito multilingua pratico da usare.
 
-PHP / Strumenti di sviluppo
+JavaScript / Web multilingua
 
-[Workspace](https://github.com/my127/workspace/pull/184)
+[Guida Moose Master](https://github.com/marcomc/moose-master-cards-and-rules)
+
+[Visita il sito](https://moose.marcomc.com/)
 
 ### BMGateway
 
-Un mio progetto open source
+Un mio progetto pubblico
 
 Un gateway Raspberry Pi per monitor batterie che collega telemetria Bluetooth, interfaccia web, MQTT e Home Assistant.
 
@@ -90,32 +92,46 @@ Python / Hardware connesso
 
 [BMGateway](https://github.com/marcomc/BMGateway)
 
-### Tricount Exporter
+### MoneyWiz Tools
 
-Un mio progetto open source
+Un mio progetto pubblico
 
-Uno strumento JavaScript per esportare spese condivise in file CSV e fogli di calcolo riutilizzabili.
+Strumenti da riga di comando per macOS: analisi di dati finanziari personali, controlli di compatibilità, simulazioni e scritture protette tramite Core Data.
 
-JavaScript / Portabilità dati
+Python · Swift / Strumenti per dati
 
-[Tricount Exporter](https://github.com/marcomc/tricount-exporter)
+[MoneyWiz Tools](https://github.com/marcomc/moneywiz-tools)
 
-### Home Assistant MQTT Agent
+### mcp-osxphotos
 
-Un mio progetto open source
+Un mio progetto pubblico
 
-Un agente di telemetria macOS che usa MQTT discovery per rendere disponibili le informazioni di sistema in Home Assistant.
+Un server MCP che collega gli strumenti AI all’interfaccia osxphotos per Apple Photos. Include documentazione per configurare i client e controlli di funzionamento.
 
-Python / Automazione
+Python / Integrazioni AI
 
-[Home Assistant MQTT Agent](https://github.com/marcomc/ha-mqtt-agent)
+[mcp-osxphotos](https://github.com/marcomc/mcp-osxphotos)
 
-## Un percorso chiaro dal problema al risultato
+## Come lavoriamo insieme
 
 1. **Capire** — Partiamo dal contesto, dalle priorità e dai vincoli.
 2. **Concordare** — Definiamo ambito, risultati attesi e preventivo prima di iniziare.
 3. **Realizzare** — Passi piccoli e verificabili, progressi visibili e feedback utile.
 4. **Consegnare** — Codice funzionante, documentazione pratica e prossimi passi concordati.
+
+## Prima di iniziare
+
+### Puoi intervenire su un progetto esistente
+
+Sì. Possiamo partire da codice, infrastrutture o un processo da migliorare. Il primo passo è capire il contesto e i vincoli.
+
+### Come viene preparato il preventivo
+
+Descrivi ciò che ti serve, ciò che esiste già e le eventuali scadenze. Concordiamo ambito, risultati attesi e preventivo prima di iniziare.
+
+### Che cosa comprende la consegna
+
+Il lavoro concordato comprende codice funzionante, documentazione pratica e prossimi passi chiari. L’eventuale supporto successivo viene discusso nell’ambito del progetto.
 
 ## GitHub
 

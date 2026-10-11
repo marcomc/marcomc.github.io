@@ -1,10 +1,11 @@
-import { holidayForDate } from './holiday-calendar.mjs?v=4b854213ccd33ef4';
-import { holidayThemeIds } from '../themes/holidays.mjs?v=4b854213ccd33ef4';
-import { accessibilityThemeIds } from '../themes/accessibility.mjs?v=4b854213ccd33ef4';
+import { holidayForDate } from './holiday-calendar.mjs?v=7903b2115ed17484';
+import { holidayThemeIds } from '../themes/holidays.mjs?v=7903b2115ed17484';
+import { accessibilityThemeIds } from '../themes/accessibility.mjs?v=7903b2115ed17484';
 
 export const themeIds = ['tide', 'fieldnotes', 'circuit', 'atelier'];
 export const allThemeIds = [...themeIds, ...holidayThemeIds, ...accessibilityThemeIds];
 export const themeLoadErrors = {
+  es: 'No se ha podido cargar esta apariencia. La página sigue disponible. Inténtalo de nuevo.',
   en: 'This appearance could not load. The page remains available. Try again.',
   fr: 'Cette apparence n’a pas pu être chargée. La page reste accessible. Réessayez.',
   it: 'Impossibile caricare il tema. La pagina resta disponibile. Riprova.',
