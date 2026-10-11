@@ -1,5 +1,5 @@
 /* halloween: original festive direction for Marco Massari Calderone. */
-:root { color-scheme: dark; --bg: #231c2c; --surface: #32283d; --text: #fff1e5; --muted: #d4c1d5; --accent: #ffbb83; --line: #7b637f; --button-text: #2d2035; --font-display: "Avenir Next", Avenir, sans-serif; --holiday-art: url("./artwork/halloween.svg?v=97ecaa8a68b5da6b"); }
+:root { color-scheme: dark; --bg: #231c2c; --surface: #32283d; --text: #fff1e5; --muted: #d4c1d5; --accent: #ffbb83; --line: #7b637f; --button-text: #2d2035; --font-display: "Avenir Next", Avenir, sans-serif; --holiday-art: url("./artwork/halloween.svg?v=4b854213ccd33ef4"); }
 
 /* Self-contained overlay for the production base; section order stays in the DOM. */
 body { background: var(--bg); }
@@ -90,9 +90,9 @@ body { background: var(--bg); }
 
 /* Original small illustrations, shared placement in assets/ornaments.css. */
 :root {
-  --ornament-scene: url("/themes/artwork/ornaments/halloween-scene.svg?v=97ecaa8a68b5da6b");
-  --ornament-detail: url("/themes/artwork/ornaments/halloween-detail.svg?v=97ecaa8a68b5da6b");
-  --ornament-edge: url("/themes/artwork/ornaments/halloween-edge.svg?v=97ecaa8a68b5da6b");
+  --ornament-scene: url("/themes/artwork/ornaments/halloween-scene.svg?v=4b854213ccd33ef4");
+  --ornament-detail: url("/themes/artwork/ornaments/halloween-detail.svg?v=4b854213ccd33ef4");
+  --ornament-edge: url("/themes/artwork/ornaments/halloween-edge.svg?v=4b854213ccd33ef4");
 }
 @media screen and (forced-colors: none) {
   .service-card { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--accent), transparent 89%), 0 8px 22px -16px #0009; }

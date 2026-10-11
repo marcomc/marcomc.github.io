@@ -1,5 +1,5 @@
 /* easter: original festive direction for Marco Massari Calderone. */
-:root { color-scheme: light; --bg: #faf7ef; --surface: #efe9dd; --text: #24372d; --muted: #516157; --accent: #46634a; --line: #c0c8b8; --button-text: #ffffff; --font-display: Georgia, "Times New Roman", serif; --holiday-art: url("./artwork/easter.svg?v=97ecaa8a68b5da6b"); }
+:root { color-scheme: light; --bg: #faf7ef; --surface: #efe9dd; --text: #24372d; --muted: #516157; --accent: #46634a; --line: #c0c8b8; --button-text: #ffffff; --font-display: Georgia, "Times New Roman", serif; --holiday-art: url("./artwork/easter.svg?v=4b854213ccd33ef4"); }
 
 /* Self-contained overlay for the production base; section order stays in the DOM. */
 body { background: var(--bg); }
@@ -89,9 +89,9 @@ body { background: var(--bg); }
 
 /* Original small illustrations, shared placement in assets/ornaments.css. */
 :root {
-  --ornament-scene: url("/themes/artwork/ornaments/easter-scene.svg?v=97ecaa8a68b5da6b");
-  --ornament-detail: url("/themes/artwork/ornaments/easter-detail.svg?v=97ecaa8a68b5da6b");
-  --ornament-edge: url("/themes/artwork/ornaments/easter-edge.svg?v=97ecaa8a68b5da6b");
+  --ornament-scene: url("/themes/artwork/ornaments/easter-scene.svg?v=4b854213ccd33ef4");
+  --ornament-detail: url("/themes/artwork/ornaments/easter-detail.svg?v=4b854213ccd33ef4");
+  --ornament-edge: url("/themes/artwork/ornaments/easter-edge.svg?v=4b854213ccd33ef4");
 }
 @media screen and (forced-colors: none) {
   .project-card { box-shadow: inset 0 1px 0 #ffffff50, 0 12px 25px -22px color-mix(in srgb, var(--text), transparent 60%); }

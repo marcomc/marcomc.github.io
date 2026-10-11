@@ -58,7 +58,7 @@ const theme = (function resolveTheme({ requested, saved, date = new Date(), mont
   return manifest.default;
 })({requested, saved, date:new Date(), manifest});
 const stylesheet = document.getElementById('theme-stylesheet');
-const fallback = '/themes/tide.css?v=97ecaa8a68b5da6b';
+const fallback = '/themes/tide.css?v=4b854213ccd33ef4';
 const themeLoadErrors = {"en":"This appearance could not load. The page remains available. Try again.","fr":"Cette apparence n’a pas pu être chargée. La page reste accessible. Réessayez.","it":"Impossibile caricare il tema. La pagina resta disponibile. Riprova.","pt":"Não foi possível carregar esta aparência. A página continua disponível. Tente novamente."};
 const isThemeStylesheetLoaded = function isThemeStylesheetLoaded(link) {
   // Failed requests can leave a sheet whose cssRules getter throws SecurityError.
@@ -81,7 +81,7 @@ stylesheet.addEventListener('error', () => {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', showLoadError, {once:true});
   else showLoadError();
 });
-if (allThemeIds.includes(theme)) stylesheet.href = '/themes/' + theme + '.css?v=97ecaa8a68b5da6b';
+if (allThemeIds.includes(theme)) stylesheet.href = '/themes/' + theme + '.css?v=4b854213ccd33ef4';
 // A preceding parser-loaded stylesheet can fail before this script attaches its
 // listener. Reconcile that already-completed default request after DOM readiness.
 if (theme === 'tide') document.addEventListener('DOMContentLoaded', () => {

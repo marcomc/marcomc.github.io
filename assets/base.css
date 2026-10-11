@@ -7,3 +7,5 @@
 @media(prefers-reduced-motion:no-preference){.button{transition:transform .2s,box-shadow .2s}.service-card{transition:transform .25s,border-color .25s}.service-card:hover{transform:translateY(-4px);border-color:var(--accent)}}
 @media(forced-colors:active){.button,.service-card,.project-card,.contact-panel{border:1px solid CanvasText}.status-dot{background:CanvasText}.portrait-orbit{display:none}}
 @media print{.site-header,.site-footer,.hero-visual,.hero-actions{display:none}body{background:white;color:black}.page-shell{width:100%}.hero,.section{padding:1rem 0;min-height:0}.hero{display:block}h1,h2{font-size:2rem}.service-grid,.project-grid{grid-template-columns:repeat(2,1fr)}.service-card,.project-card{break-inside:avoid}p,.lede{color:black!important}}
+
+.visitor-statistics{margin-top:1rem;font-size:.78rem;color:var(--muted)}.visitor-statistics a{display:inline-block;min-height:44px;padding-block:.65rem}.visitor-statistics strong{font-variant-numeric:tabular-nums;color:var(--text)}
