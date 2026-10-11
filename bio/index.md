@@ -55,7 +55,7 @@ GitHub snapshot: 2026-10-10. Repository count includes forks; stars exclude fork
 - [GitHub source 1](https://api.github.com/users/marcomc/repos?per_page=100&type=owner)
 - [GitHub source 2](https://github.com/search?q=author%3Amarcomc+type%3Apr+is%3Amerged+is%3Apublic+-user%3Amarcomc&type=pullrequests)
 
-## What would you like to build
+## A good collaboration starts with a conversation
 
 For consulting enquiries or a project quote, email me with a little context: what you need, where you are now and any timing constraints.
 

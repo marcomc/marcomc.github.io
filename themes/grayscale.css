@@ -9,9 +9,9 @@
   --line: #9b9b9b;
   --radius: 2px;
   --font-display: "Iowan Old Style", Georgia, serif;
-  --ornament-scene: url("/themes/artwork/ornaments/grayscale-scene.svg?v=6d3597b5f50e693d");
-  --ornament-detail: url("/themes/artwork/ornaments/grayscale-detail.svg?v=6d3597b5f50e693d");
-  --ornament-edge: url("/themes/artwork/ornaments/grayscale-edge.svg?v=6d3597b5f50e693d");
+  --ornament-scene: url("/themes/artwork/ornaments/grayscale-scene.svg?v=97ecaa8a68b5da6b");
+  --ornament-detail: url("/themes/artwork/ornaments/grayscale-detail.svg?v=97ecaa8a68b5da6b");
+  --ornament-edge: url("/themes/artwork/ornaments/grayscale-edge.svg?v=97ecaa8a68b5da6b");
 }
 body { background: var(--bg); }
 .site-header { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; border-bottom: 2px solid var(--text); }

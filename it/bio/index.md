@@ -55,7 +55,7 @@ Dati GitHub al: 2026-10-10. Il numero di repository include i fork; le stelle li
 - [GitHub source 1](https://api.github.com/users/marcomc/repos?per_page=100&type=owner)
 - [GitHub source 2](https://github.com/search?q=author%3Amarcomc+type%3Apr+is%3Amerged+is%3Apublic+-user%3Amarcomc&type=pullrequests)
 
-## Che cosa vorresti realizzare
+## Una buona collaborazione inizia da una conversazione
 
 Per una consulenza o un preventivo, scrivimi con un po’ di contesto: che cosa ti serve, da dove parti e le eventuali scadenze.
 

@@ -55,7 +55,7 @@ Dados GitHub de: 2026-10-10. Os repositórios incluem forks; as estrelas excluem
 - [GitHub source 1](https://api.github.com/users/marcomc/repos?per_page=100&type=owner)
 - [GitHub source 2](https://github.com/search?q=author%3Amarcomc+type%3Apr+is%3Amerged+is%3Apublic+-user%3Amarcomc&type=pullrequests)
 
-## O que gostaria de criar
+## Uma boa colaboração começa com uma conversa
 
 Para consultoria ou um orçamento, envie-me um email com algum contexto: o que precisa, em que ponto está e os prazos relevantes.
 

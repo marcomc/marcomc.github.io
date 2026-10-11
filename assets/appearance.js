@@ -57,5 +57,34 @@ const theme = (function resolveTheme({ requested, saved, date = new Date(), mont
   }
   return manifest.default;
 })({requested, saved, date:new Date(), manifest});
-if (allThemeIds.includes(theme)) document.getElementById('theme-stylesheet').href = '/themes/' + theme + '.css?v=6d3597b5f50e693d';
+const stylesheet = document.getElementById('theme-stylesheet');
+const fallback = '/themes/tide.css?v=97ecaa8a68b5da6b';
+const themeLoadErrors = {"en":"This appearance could not load. The page remains available. Try again.","fr":"Cette apparence n’a pas pu être chargée. La page reste accessible. Réessayez.","it":"Impossibile caricare il tema. La pagina resta disponibile. Riprova.","pt":"Não foi possível carregar esta aparência. A página continua disponível. Tente novamente."};
+const isThemeStylesheetLoaded = function isThemeStylesheetLoaded(link) {
+  // Failed requests can leave a sheet whose cssRules getter throws SecurityError.
+  try { return Boolean(link.sheet?.cssRules.length); } catch { return false; }
+};
+function showLoadError() {
+  if (!stylesheet.isConnected) return;
+  const note = document.getElementById('theme-error') ?? document.createElement('small');
+  note.id = 'theme-error';
+  note.className = 'appearance-status';
+  note.setAttribute('role', 'status');
+  note.textContent = themeLoadErrors[document.documentElement.lang] ?? themeLoadErrors.en;
+  const control = document.querySelector('.theme-control');
+  (control?.hidden ? document.querySelector('.site-footer') : control)?.append(note);
+  note.hidden = false;
+}
+stylesheet.addEventListener('error', () => {
+  if (!stylesheet.isConnected) return;
+  if (stylesheet.getAttribute('href') !== fallback) stylesheet.href = fallback;
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', showLoadError, {once:true});
+  else showLoadError();
+});
+if (allThemeIds.includes(theme)) stylesheet.href = '/themes/' + theme + '.css?v=97ecaa8a68b5da6b';
+// A preceding parser-loaded stylesheet can fail before this script attaches its
+// listener. Reconcile that already-completed default request after DOM readiness.
+if (theme === 'tide') document.addEventListener('DOMContentLoaded', () => {
+  if (!isThemeStylesheetLoaded(stylesheet)) showLoadError();
+}, {once:true});
 })();

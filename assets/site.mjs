@@ -1,6 +1,6 @@
-import { resolveTheme, sectionOrder, allThemeIds } from './theme.mjs?v=6d3597b5f50e693d';
-import { holidayForDate } from './holiday-calendar.mjs?v=6d3597b5f50e693d';
-import { holidayNotices } from '../themes/holidays.mjs?v=6d3597b5f50e693d';
+import { resolveTheme, sectionOrder, allThemeIds, themeLoadErrors, isThemeStylesheetLoaded } from './theme.mjs?v=97ecaa8a68b5da6b';
+import { holidayForDate } from './holiday-calendar.mjs?v=97ecaa8a68b5da6b';
+import { holidayNotices } from '../themes/holidays.mjs?v=97ecaa8a68b5da6b';
 const preferenceKey = 'marcomc-theme';
 const assetQuery = new URL(import.meta.url).search;
 const storage = {
@@ -16,6 +16,13 @@ async function init() {
   const sections = [...main.querySelectorAll(':scope > [data-section]')];
   const existing = sections.map(s => s.dataset.section);
   const selector = document.getElementById('theme-select');
+  // Cached HTML from an earlier deployment may not contain the status element.
+  const errorNote = document.getElementById('theme-error') ?? document.createElement('small');
+  errorNote.id = 'theme-error';
+  errorNote.setAttribute('role', 'status');
+  errorNote.textContent = themeLoadErrors[document.documentElement.lang] ?? themeLoadErrors.en;
+  errorNote.hidden = true;
+  document.querySelector('.theme-control').append(errorNote);
   const holidayNote = document.createElement('small');
   holidayNote.id = 'holiday-note';
   holidayNote.setAttribute('role', 'status');
@@ -29,37 +36,61 @@ async function init() {
     if (!allThemeIds.includes(theme)) return;
     const current = document.getElementById('theme-stylesheet');
     const stylesheetURL = `/themes/${theme}.css${assetQuery}`;
-    if (current.href !== new URL(stylesheetURL, location.origin).href) {
+    if (current.href !== new URL(stylesheetURL, location.origin).href || !isThemeStylesheetLoaded(current)) {
       const sheet = document.createElement('link');
       sheet.rel = 'stylesheet';
       sheet.href = stylesheetURL;
       const loaded = new Promise(resolve => { sheet.onload = () => resolve(true); sheet.onerror = () => resolve(false); });
       document.head.append(sheet);
-      if (!await loaded || currentId !== changeId) { sheet.remove(); return; }
+      const success = await loaded;
+      if (currentId !== changeId) { sheet.remove(); return null; }
+      if (!success) { sheet.remove(); errorNote.hidden = false; return false; }
       current.remove();
       sheet.id = 'theme-stylesheet';
     }
     document.body.dataset.theme = theme;
-    for (const id of sectionOrder(manifest, theme, document.body.dataset.page, existing)) main.append(sections.find(s => s.dataset.section === id));
+    const focused = document.activeElement;
+    let next = main.firstElementChild;
+    for (const id of sectionOrder(manifest, theme, document.body.dataset.page, existing)) {
+      const section = sections.find(s => s.dataset.section === id);
+      if (section === next) next = next.nextElementSibling;
+      else main.insertBefore(section, next);
+    }
+    if (main.contains(focused) && document.activeElement !== focused) focused.focus({preventScroll:true});
+    errorNote.hidden = true;
     const today = holidayForDate(date);
     const holiday = today?.id === theme ? today : null;
     const lang = document.documentElement.lang;
     holidayNote.textContent = holiday ? (holidayNotices[lang] ?? holidayNotices.en)
       .replace('{holiday}', holiday.names[lang] ?? holiday.names.en) : '';
     holidayNote.hidden = !holiday;
+    return true;
   }
   const requested = new URLSearchParams(location.search).get('theme');
   const saved = storage.get();
   const initial = allThemeIds.includes(requested) || requested === 'auto' ? requested
     : allThemeIds.includes(saved) || saved === 'auto' ? saved : manifest.default;
   let choice = initial;
+  let displayedChoice = initial;
+  let pendingSelection = false;
   let calendarDay = new Date().toDateString();
   selector.value = initial;
-  await apply(initial);
+  if (await apply(initial) === false) {
+    displayedChoice = manifest.default;
+    selector.value = displayedChoice;
+  }
   document.querySelector('.theme-control').hidden = false;
   selector.addEventListener('change', async () => {
-    choice = selector.value;
-    storage.set(selector.value);
+    const selected = selector.value;
+    pendingSelection = true;
+    const applied = await apply(selected);
+    if (applied === null) return;
+    pendingSelection = false;
+    if (applied === false) { selector.value = displayedChoice; refreshCalendar(); return; }
+    if (applied !== true) return;
+    choice = selected;
+    displayedChoice = selected;
+    storage.set(selected);
     const cleanURL = new URL(location.href);
     cleanURL.searchParams.delete('theme');
     history.replaceState(null, '', cleanURL);
@@ -67,7 +98,7 @@ async function init() {
       const target = new URL(link.href);
       if (target.origin === location.origin) { target.searchParams.delete('theme'); link.href = target; }
     }
-    await apply(selector.value);
+    refreshCalendar();
   });
   if (allThemeIds.includes(requested) || requested === 'auto') {
     for (const link of document.querySelectorAll('.primary-nav a, .language-switch a')) {
@@ -83,9 +114,15 @@ async function init() {
     nextDay.setHours(24, 0, 0, 0);
     clearTimeout(midnightTimer);
     midnightTimer = setTimeout(refreshCalendar, nextDay.getTime() - now.getTime() + 50);
-    if (now.toDateString() !== calendarDay) {
+    if (!pendingSelection && now.toDateString() !== calendarDay) {
       calendarDay = now.toDateString();
-      apply(choice);
+      const calendarChoice = choice;
+      apply(calendarChoice).then(applied => {
+        if (applied === true) {
+          displayedChoice = calendarChoice;
+          selector.value = calendarChoice;
+        }
+      });
     }
   }
   document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshCalendar(); });

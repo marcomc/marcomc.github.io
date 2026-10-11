@@ -55,7 +55,7 @@ Relevé GitHub: 2026-10-10. Les dépôts incluent les forks ; les étoiles les e
 - [GitHub source 1](https://api.github.com/users/marcomc/repos?per_page=100&type=owner)
 - [GitHub source 2](https://github.com/search?q=author%3Amarcomc+type%3Apr+is%3Amerged+is%3Apublic+-user%3Amarcomc&type=pullrequests)
 
-## Que souhaitez-vous créer
+## Une bonne collaboration commence par une conversation
 
 Pour une consultation ou un devis, écrivez-moi en précisant votre besoin, votre situation actuelle et vos contraintes de calendrier.
 

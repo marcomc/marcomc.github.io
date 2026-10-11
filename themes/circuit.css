@@ -65,9 +65,9 @@ body { background-image: linear-gradient(#a894ff08 1px, transparent 1px), linear
 
 /* Original small illustrations, shared placement in assets/ornaments.css. */
 :root {
-  --ornament-scene: url("/themes/artwork/ornaments/circuit-scene.svg?v=6d3597b5f50e693d");
-  --ornament-detail: url("/themes/artwork/ornaments/circuit-detail.svg?v=6d3597b5f50e693d");
-  --ornament-edge: url("/themes/artwork/ornaments/circuit-edge.svg?v=6d3597b5f50e693d");
+  --ornament-scene: url("/themes/artwork/ornaments/circuit-scene.svg?v=97ecaa8a68b5da6b");
+  --ornament-detail: url("/themes/artwork/ornaments/circuit-detail.svg?v=97ecaa8a68b5da6b");
+  --ornament-edge: url("/themes/artwork/ornaments/circuit-edge.svg?v=97ecaa8a68b5da6b");
 }
 @media screen and (forced-colors: none) {
   .service-card { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--accent), transparent 89%), 0 8px 22px -16px #0009; }

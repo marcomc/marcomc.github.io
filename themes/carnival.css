@@ -1,5 +1,5 @@
 /* carnival: original festive direction for Marco Massari Calderone. */
-:root { color-scheme: light; --bg: #f8f2f8; --surface: #eee3f0; --text: #362445; --muted: #67506f; --accent: #72417c; --line: #bba5c0; --button-text: #fff9fc; --font-display: "Avenir Next", Avenir, sans-serif; --holiday-art: url("./artwork/carnival.svg?v=6d3597b5f50e693d"); }
+:root { color-scheme: light; --bg: #f8f2f8; --surface: #eee3f0; --text: #362445; --muted: #67506f; --accent: #72417c; --line: #bba5c0; --button-text: #fff9fc; --font-display: "Avenir Next", Avenir, sans-serif; --holiday-art: url("./artwork/carnival.svg?v=97ecaa8a68b5da6b"); }
 
 /* Self-contained overlay for the production base; section order stays in the DOM. */
 body { background: var(--bg); }
@@ -91,9 +91,9 @@ body { background: var(--bg); }
 
 /* Original small illustrations, shared placement in assets/ornaments.css. */
 :root {
-  --ornament-scene: url("/themes/artwork/ornaments/carnival-scene.svg?v=6d3597b5f50e693d");
-  --ornament-detail: url("/themes/artwork/ornaments/carnival-detail.svg?v=6d3597b5f50e693d");
-  --ornament-edge: url("/themes/artwork/ornaments/carnival-edge.svg?v=6d3597b5f50e693d");
+  --ornament-scene: url("/themes/artwork/ornaments/carnival-scene.svg?v=97ecaa8a68b5da6b");
+  --ornament-detail: url("/themes/artwork/ornaments/carnival-detail.svg?v=97ecaa8a68b5da6b");
+  --ornament-edge: url("/themes/artwork/ornaments/carnival-edge.svg?v=97ecaa8a68b5da6b");
 }
 @media screen and (forced-colors: none) {
   .project-card { box-shadow: inset 0 1px 0 #ffffff50, 0 12px 25px -22px color-mix(in srgb, var(--text), transparent 60%); }

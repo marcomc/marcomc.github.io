@@ -1,5 +1,5 @@
 /* new-year: original festive direction for Marco Massari Calderone. */
-:root { color-scheme: dark; --bg: #101e2b; --surface: #1a2a3b; --text: #f7f3e8; --muted: #bbcad7; --accent: #edcd85; --line: #506278; --button-text: #14212e; --font-display: "Avenir Next", Avenir, sans-serif; --holiday-art: url("./artwork/new-year.svg?v=6d3597b5f50e693d"); }
+:root { color-scheme: dark; --bg: #101e2b; --surface: #1a2a3b; --text: #f7f3e8; --muted: #bbcad7; --accent: #edcd85; --line: #506278; --button-text: #14212e; --font-display: "Avenir Next", Avenir, sans-serif; --holiday-art: url("./artwork/new-year.svg?v=97ecaa8a68b5da6b"); }
 
 /* Self-contained overlay for the production base; section order stays in the DOM. */
 body { background: var(--bg); }
@@ -92,9 +92,9 @@ body { background: var(--bg); }
 
 /* Original small illustrations, shared placement in assets/ornaments.css. */
 :root {
-  --ornament-scene: url("/themes/artwork/ornaments/new-year-scene.svg?v=6d3597b5f50e693d");
-  --ornament-detail: url("/themes/artwork/ornaments/new-year-detail.svg?v=6d3597b5f50e693d");
-  --ornament-edge: url("/themes/artwork/ornaments/new-year-edge.svg?v=6d3597b5f50e693d");
+  --ornament-scene: url("/themes/artwork/ornaments/new-year-scene.svg?v=97ecaa8a68b5da6b");
+  --ornament-detail: url("/themes/artwork/ornaments/new-year-detail.svg?v=97ecaa8a68b5da6b");
+  --ornament-edge: url("/themes/artwork/ornaments/new-year-edge.svg?v=97ecaa8a68b5da6b");
 }
 @media screen and (forced-colors: none) {
   .service-card { box-shadow: inset 0 1px 0 color-mix(in srgb, var(--accent), transparent 89%), 0 8px 22px -16px #0009; }
